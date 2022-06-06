@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const fetch = import("node-fetch")
+const fetch = require("node-fetch")
 const client = new Discord.Client();
 
 client.once('ready', async () => {

@@ -3,7 +3,7 @@
 ## Features & Commands
 ### Commands
 - [ ] command
-    - description
+      - description
       - args 1
         - descriptions
         - args 1-1

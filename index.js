@@ -11,7 +11,9 @@ client.once('ready', async () => {
 })
 
 client.on('message', async message => {
+    console.log(message.content)
     if(message.content.startsWith('<@983260530011693056>') && !message.author.bot){
+        console.log('chatbot')
         let json = await fetch("https://api.affiliateplus.xyz/api/chatbot?message="+message.content.replace('<@983260530011693056>','')+"&name=Vanix&user=" + message.author.id + "variamcbot")
         let chat = await json.json()
         let messagemain = chat.message.replaceAll('@everyone','#everyone').replaceAll('@here','#here')

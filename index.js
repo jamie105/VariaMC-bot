@@ -15,7 +15,7 @@ client.on('message', async message => {
     if(message.content.startsWith('<@983260530011693056>') || message.content.startsWith('<@!983260530011693056>')){
         let json = await fetch("https://api.affiliateplus.xyz/api/chatbot?message="+message.content.replace('<@983260530011693056>','')+"&name=Vanix&user=" + message.author.id + "variamcbot")
         let chat = await json.json()
-        let messagemain = chat.message.replaceAll('@everyone','#everyone').replaceAll('@here','#here')
+        let messagemain = chat.message.replaceAll('@everyone','#everyone').replaceAll('@here','#here').replaceAll('<@&926523112491716639>','#player')
         message.reply(messagemain)
     }
 })

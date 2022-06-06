@@ -2,7 +2,7 @@
 
 ## Features & Commands
 ### Commands
-[ ] - command
+- [ ] command
     - description
       - args 1
         - descriptions
@@ -12,7 +12,7 @@
         - description
         
 ### Features
-[ ] - feature
+- [ ] feature
       - description
       
 ## Config

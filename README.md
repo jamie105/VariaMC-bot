@@ -1,4 +1,5 @@
 # VariaMC-bot
+descriptions idfk
 
 ## Features & Commands
 ### Commands
@@ -15,5 +16,17 @@
 - [ ] feature
   - description
       
-## Config
+## Config (.json info)
+yes.
 
+## Integrations
+suck a mc ig?
+
+## Databases
+fml
+
+## Backups
+seems easy? not.
+
+## Misc
+hopper? hrmmmmmmmmmmm

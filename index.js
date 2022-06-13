@@ -6,7 +6,7 @@ const fs = require('fs');
 
 //Setup Collections For Organisation Files
 client.commands = new Discord.Collection();
-client.constants = new Discord.Collection();
+client.logging = new Discord.Collection();
 
 
 //Find Organisation Files
@@ -17,8 +17,8 @@ for (const file of commandFiles) {
 }
 const loggingFiles = fs.readdirSync('./logging').filter(file => file.endsWith('.js'));
 for (const file of loggingFiles) {
-    const logging = require(`./logging/${file}`);
-    client.logging.set(logging.name, logging);
+    const loggings = require(`./logging/${file}`);
+    client.logging.set(loggings.name, loggings);
 }
 
 client.once('ready', async () => {

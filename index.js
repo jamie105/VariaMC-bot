@@ -2,6 +2,7 @@ const Discord = require('discord.js');
 const fetch = require("node-fetch")
 const client = new Discord.Client();
 const cooldowns = new Discord.Collection();
+const fs = require('fs');
 
 //Setup Collections For Organisation Files
 client.commands = new Discord.Collection();

@@ -7,8 +7,8 @@ module.exports = {
     name: "main",
     description: "the core for vanix",
     async execute(client, message) {
-		if(message.content.startsWith("//")){return}
-		var modifiedmessage = message.content
+		if(!message.content.startsWith("//")){return}
+		var modifiedmessage = message.content.replaceAll("//","")
 		//replace items in message
 		for(const x in chatcheck.replace){
 			if(modifiedmessage.includes(x)){
@@ -28,7 +28,7 @@ module.exports = {
 			}
 		}
 		
-        var json = await fetch("https://api.affiliateplus.xyz/api/chatbot?message="+modifiedmessage+"&name=Vanix&user=siryakstudioschatbot"+message.author.id+"&botmaster=<@462554041440796674>&master=<@462554041440796674>")
+        var json = await fetch("https://api.affiliateplus.xyz/api/chatbot?message="+modifiedmessage+"&name=Vanix&user=siryakstudioschatbot001"+message.author.id+"&botmaster=<@462554041440796674>&master=<@462554041440796674>")
 		var chat = await json.json()
 		message.reply(chat.message)
     }

@@ -1,0 +1,12 @@
+{
+	"replace": {
+		"@everyone": "#everyone",
+		"@here": "#here"
+	},
+	"language": {
+		"u": "you"
+	},
+	"custom": {
+		"what is the ip": "The server IP is\n```IP: play.variamc.net\nPort: 19132```"
+	}
+}

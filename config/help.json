@@ -1,1 +1,59 @@
-
+{
+	"categories": ["General","Ranked","Moderation","Events","Misc"],
+	"command": {
+		"category": "general",
+		"description": "cool command lmao",
+		"usage": "command (yes|hello) (idk|lmao) [idk(yello|idfk)|lmao(ma|lol)]",
+		"specific": {
+			"yes": {
+				"description": "basic thingy",
+				"idk": {
+					"description": "idk im bored",
+					"yello": {
+						"description": "sucks to suck"
+					},
+					"idfk": {
+						"description": "huh whats up"
+					}
+				},
+				"lmao": {
+					"description": "we're all sus",
+					"ma": {
+						"description": "boredom is sus"
+					},
+					"lol": {
+						"description": "im bored now"
+					}
+				}
+			},
+			"hello": {
+				"description": "basic thingy",
+				"idk": {
+					"description": "idk im bored",
+					"yello": {
+						"description": "sucks to suck"
+					},
+					"idfk": {
+						"description": "huh whats up"
+					}
+				},
+				"lmao": {
+					"description": "we're all sus",
+					"ma": {
+						"description": "boredom is sus"
+					},
+					"lol": {
+						"description": "im bored now"
+					}
+				}
+			}
+		},
+		"examples": {
+			"1": "command yes idk yello",
+			"2": "command yes lmao ma",
+			"3": "command hello idk idfk"
+		},
+		"permissions": ["administrator","manager","coowner","owner"]
+	},
+	"next": {}
+}

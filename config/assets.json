@@ -1,1 +1,61 @@
-{}
+{
+  "channels":{
+	  "logging": {
+		  
+	  },
+	  "general": {
+		  
+	  },
+	  "overview": {
+		  
+	  },
+	  "specific": {
+		  "vanix": "994719526073671790"
+	  }
+  },
+  "roles":{
+	  "staff": {
+		  "owner": "",
+		  "coowner": "",
+		  "developer": "",
+		  "manager": "",
+		  "sradministrator": "",
+		  "administrator": "",
+		  "partnermanager": "",
+		  "srmoderator": "",
+		  "moderator": "",
+		  "helper": "",
+		  "trainee": ""
+	  },
+	  "ranks": {
+		  
+	  },
+	  "special": {
+		  
+	  },
+	  "ping": {
+		  "announcements": "",
+		  "polls": "",
+		  "giveaways": "",
+		  "events": "",
+		  "misc": ""
+	  }
+  },
+  "servers": {
+	  "main": "",
+	  "background": "",
+	  "database": ""
+  },
+  "prefix": "!",
+  "icon": "",
+  "color": {
+    "good": "#",
+    "bad": "#",
+    "warning": "#",
+    "error": "#",
+    "general": "#",
+    "logging": "#"
+  }
+
+
+}

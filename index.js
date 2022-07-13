@@ -23,7 +23,6 @@ client.vanix = new Discord.Collection();
 const constantFiles = fs.readdirSync('./constants').filter(file => file.endsWith('.js'));
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 const databasesFiles = fs.readdirSync('./database').filter(file => file.endsWith('.js'));
-const eventFiles = fs.readdirSync('./events').filter(file => file.endsWith('.js'));
 const loggingsFiles = fs.readdirSync('./logging').filter(file => file.endsWith('.js'));
 const vanixsFiles = fs.readdirSync('./vanix').filter(file => file.endsWith('.js'));
 console.log(vanixsFiles)
@@ -39,10 +38,6 @@ for (const file of commandFiles) {
 for (const file of databasesFiles) {
     const databases = require(`./database/${file}`);
     client.database.set(databases.name, databases);
-}
-for (const file of eventFiles) {
-    const event = require(`./events/${file}`);
-    client.events.set(event.name, event);
 }
 for (const file of loggingsFiles) {
     const loggings = require(`./logging/${file}`);

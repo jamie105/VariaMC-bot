@@ -18,7 +18,7 @@ module.exports = {
 		}
 		//Language barrier
 		for(const x in chatcheck.language){
-			if(modifiedmessage.includes(" "+x+" ")){
+			if(modifiedmessage.includes(x)){
 				modifiedmessage = modifiedmessage.replaceAll(x,chatcheck.language[x])
 			}
 		}

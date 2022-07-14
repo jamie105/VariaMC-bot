@@ -24,7 +24,7 @@ module.exports = {
 		}
 		//Manual override for answer
 		for(const x in chatcheck.custom){
-			if(modifiedmessage===x){
+			if(modifiedmessage.includes(x)){
 				return message.reply(chatcheck.custom[x])
 			}
 		}

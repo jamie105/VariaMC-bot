@@ -17,6 +17,7 @@ client.constants = new Discord.Collection();
 client.commands = new Discord.Collection();
 client.database = new Discord.Collection();
 client.logging = new Discord.Collection();
+client.events = new Discord.Collection();
 client.vanix = new Discord.Collection();
 
 //Find Organisation Files
@@ -24,6 +25,7 @@ const constantFiles = fs.readdirSync('./constants').filter(file => file.endsWith
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 const databasesFiles = fs.readdirSync('./database').filter(file => file.endsWith('.js'));
 const loggingsFiles = fs.readdirSync('./logging').filter(file => file.endsWith('.js'));
+const eventFiles = fs.readdirSync('./events').filter(file => file.endsWith('.js'));
 const vanixsFiles = fs.readdirSync('./vanix').filter(file => file.endsWith('.js'));
 console.log(vanixsFiles)
 
@@ -43,6 +45,10 @@ for (const file of loggingsFiles) {
     const loggings = require(`./logging/${file}`);
     client.logging.set(loggings.name, loggings);
 }
+for (const file of eventFiles) {
+    const event = require(`./events/${file}`);
+    client.events.set(event.name, event);
+}
 for (const file of vanixsFiles) {
     const vanixs = require(`./vanix/${file}`);
     client.vanix.set(vanixs.name, vanixs);
@@ -52,11 +58,11 @@ for (const file of vanixsFiles) {
 
 client.once('ready', async () => {
     console.log(`Logged in as ${client.user.tag}!`);
-    /**setInterval(function(){
-	for(let x of client.constants){
-		console.log(x)
-	}
-	},5000);**/
+    setInterval(function(){
+        for (const x in client.constants){
+		    console.log(x)
+	    }
+	},5000);
     client.user.setActivity("variamc.net", {
         type: "STREAMING",
         url: "https://www.twitch.tv/variamc"
@@ -69,7 +75,10 @@ client.on('message', async message => {
     if(message.author.bot){return}
     if(message.channel.id===client.assets.channels.specific.vanix){
 		return client.vanix.get("main").execute(client, message)
-	}
+    }
+    if (message.channel.id === client.assets.channels.specific.polls) {
+        return client.events.get("polls").execute(client, message)
+    }
     if(!message.content.startsWith(prefix)){return}
     const args = message.content.slice(prefix.length).trim().split(/ +/);
     const commandName = args.shift().toLowerCase();

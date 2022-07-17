@@ -1,61 +1,95 @@
 {
   "channels":{
-	  "logging": {
-		  
-	  },
-	  "general": {
-		  
-	  },
-	  "overview": {
-		  
-	  },
+		"gateway": {
+			"verify": [ "" ],
+			"welcome": [ "" ]
+		},
+		"information": {
+			"rules": [ "" ],
+			"faq": [ "" ],
+			"partners": [ "" ],
+			"reaction-roles": [ "" ]
+		},
+		"broadcast": {
+			"announcements": [ "" ],
+			"sneak-peaks": [ "" ],
+			"polls": [ "" ],
+			"development": [ "" ],
+			"giveaways": [ "" ],
+			"suggestions": [ "" ],
+			"donations": [ "" ]
+		},
+		"communication": {
+			"general": [ "" ],
+			"commands": [ "" ],
+			"vanix": [ "" ],
+			"recruitment": [ "" ]
+		},
+		"voice channels": {
+			"music": [ "" ],
+			"afk": [ "" ],
+			"staff": [ "" ]
+		},
+		"support": {
+			"ticket-support": [ "" ],
+			"bug-reports": [ "" ]
+		},
+		"logistics": {
+			"discord-updates": [ "" ],
+			"command-logs": [ "" ],
+			"moderation-logs": [ "" ],
+			"message-logs": [ "" ],
+			"modification-logs": [ "" ],
+			"misc-logs": [ "" ]
+		},
 	  "specific": {
-		  "vanix": "994719526073671790"
+			"vanix": [ "994719526073671790" ],
+			"polls": [ "994719508465991690" ]
 	  }
   },
   "roles":{
-	  "staff": {
-		  "owner": "",
-		  "coowner": "",
-		  "developer": "",
-		  "manager": "",
-		  "sradministrator": "",
-		  "administrator": "",
-		  "partnermanager": "",
-		  "srmoderator": "",
-		  "moderator": "",
-		  "helper": "",
-		  "trainee": ""
-	  },
+		"staff": {
+			"owner": [ "994719494444433488", "1" ],
+			"coowner": [ "994719496914874438", "2" ],
+			"manager": [ "994719499410485380", "3" ],
+			"administrator": [ "994719504661753926", "4" ],
+			"moderator": [ "994719507107037304", "5" ],
+			"helper": [ "994719509464232026", "6" ],
+			"builder": [ "994719512203100220", "7" ],
+			"partnermanager": [ "994719501989982360", "8" ]
+		},
 	  "ranks": {
 		  
 	  },
 	  "special": {
-		  
+			"JamBypass": [ "991715026706640976" ],
+			"Varia": [ "994719489369313410" ],
+			"Muted": [ "994719514627407913" ],
+			"Server Booster": [ "931640083545718854" ],
+			"Player": [ "994719544318898319" ]
 	  },
 	  "ping": {
-		  "announcements": "",
-		  "polls": "",
-		  "giveaways": "",
-		  "events": "",
-		  "misc": ""
+			"announcements": [ "" ],
+			"polls": [ "" ],
+			"giveaways": [ "" ],
+			"events": [ "" ],
+			"misc": [ "" ]
 	  }
   },
-  "servers": {
-	  "main": "",
-	  "background": "",
-	  "database": ""
-  },
+	"servers": {
+		"main": "926514076539027559",
+		"database": "983260862808743956"
+	},
   "prefix": "!",
   "icon": "",
-  "color": {
-    "good": "#",
-    "bad": "#",
-    "warning": "#",
-    "error": "#",
-    "general": "#",
-    "logging": "#"
-  }
+	"color": {
+		"good": "#03a103",
+		"bad": "#9e0000",
+		"warning": "#9cad02",
+		"error": "#ad4305",
+		"general": "#2400b5",
+		"logging": "#010438"
+	}
 
 
 }

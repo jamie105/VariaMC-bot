@@ -58,11 +58,11 @@ for (const file of vanixsFiles) {
 
 client.once('ready', async () => {
     console.log(`Logged in as ${client.user.tag}!`);
-    setInterval(function(){
+    /**setInterval(function(){
         for (const x in client.constants){
 		    console.log(x)
 	    }
-	},5000);
+	},5000);**/
     client.user.setActivity("variamc.net", {
         type: "STREAMING",
         url: "https://www.twitch.tv/variamc"

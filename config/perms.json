@@ -1,19 +1,7 @@
 {
 	"mute": {
-		"roles": ["moderator","srmoderator","administrator","sradministrator","manager","coowner","owner"],
-		"blacklistedchannels": [],
-		"add": {
-			"roles": ["moderator","srmoderator","administrator","sradministrator","manager","coowner","owner"],
-			"blacklistedchannels": []
-		},
-		"remove": {
-			"roles": ["moderator","srmoderator","administrator","sradministrator","manager","coowner","owner"],
-			"blacklistedchannels": []
-		},
-		"view": {
-			"roles": "everyone",
-			"blacklistedchannels": []
-		}
+		"roles": ["moderator","administrator","manager","coowner","owner"],
+		"blacklistedchannels": []
 	}
 }
 

@@ -4,16 +4,15 @@ const fetch = require("node-fetch")
 const client = new Discord.Client();
 const cooldowns = new Discord.Collection();
 const fs = require('fs');
-const stopPhishing = require('stop-discord-phishing')
 
 //config files
 client.assets = require('./config/assets.json')
+const perms = require('./config/perms.json')
 
 //SpecificVariables
 const prefix = client.assets.prefix
 
 //Setup Collections For Organisation Files
-client.constants = new Discord.Collection();
 client.commands = new Discord.Collection();
 client.database = new Discord.Collection();
 client.logging = new Discord.Collection();
@@ -21,18 +20,12 @@ client.events = new Discord.Collection();
 client.vanix = new Discord.Collection();
 
 //Find Organisation Files
-const constantFiles = fs.readdirSync('./constants').filter(file => file.endsWith('.js'));
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 const databasesFiles = fs.readdirSync('./database').filter(file => file.endsWith('.js'));
 const loggingsFiles = fs.readdirSync('./logging').filter(file => file.endsWith('.js'));
 const eventFiles = fs.readdirSync('./events').filter(file => file.endsWith('.js'));
 const vanixsFiles = fs.readdirSync('./vanix').filter(file => file.endsWith('.js'));
-console.log(vanixsFiles)
 
-for (const file of constantFiles) {
-    const constant = require(`./constants/${file}`);
-    client.constants.set(constant.name, constant);
-}
 for (const file of commandFiles) {
     const command = require(`./commands/${file}`);
     client.commands.set(command.name, command);
@@ -69,21 +62,21 @@ client.once('ready', async () => {
     });
 })
 
-console.log(client.vanix.get("main"))
-
 client.on('message', async message => {
     if(message.author.bot){return}
-    if(message.channel.id===client.assets.channels.specific.vanix){
+    if(message.channel.id===client.assets.channels.specific.vanix[0]){
 		return client.vanix.get("main").execute(client, message)
     }
-    if (message.channel.id === client.assets.channels.specific.polls) {
+    if(message.channel.id===client.assets.channels.specific.polls[0]){
         return client.events.get("polls").execute(client, message)
     }
     if(!message.content.startsWith(prefix)){return}
     const args = message.content.slice(prefix.length).trim().split(/ +/);
     const commandName = args.shift().toLowerCase();
     const command = client.commands.get(commandName) || client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
-    if (!command) {} else {
+    if (!command) {
+		return message.reply("[embed] THIS IS NOT A COMMAND DUMBASS")
+		} else {
         if (!cooldowns.has(command.name)) {
             cooldowns.set(command.name, new Discord.Collection());
         }
@@ -131,7 +124,28 @@ client.on('message', async message => {
         timestamps.set(message.author.id, now);
         setTimeout(() => timestamps.delete(message.author.id), cooldownAmount);
         try {
-            command.execute(message, args, client);
+			for (const x in perms){
+				if(command.name===x){
+					for(let ia=0;ia<perms[x].blacklistedchannels.length;ia++){
+						if(message.channel.id===perms[x].blacklistedchannels[ia]){
+							return message.reply("[embed] THIS COMMAND CANNOT BE EXECUTED IN THIS CHANNEL!")
+						}
+					}
+					for(let ib=0;ib<perms[x].roles.length;ib++){
+						var executeditem = false
+						message.guild.members.cache.get(message.author.id).roles._roles.forEach(role=> {
+							if(client.assets.roles.all[perms[x].roles[ib]]===role.id){
+								command.execute(message, args, client)
+								return executeditem = true
+							}
+						})
+						if(executeditem === true){return}
+						
+					}
+					return message.reply("[embed] YOU DONT HAVE PERMISSION TO SEND THIS COMMAND!!")
+				}
+			}
+            //command.execute(message, args, client);
         } catch (error) {
             console.error(error);
             message.reply('Error, please report');

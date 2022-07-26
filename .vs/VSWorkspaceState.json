@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\commands",
+    "\\config",
+    "\\vanix"
   ],
-  "SelectedNode": "\\commands",
+  "SelectedNode": "\\verifybackground.png",
   "PreviewInSolutionExplorer": false
 }

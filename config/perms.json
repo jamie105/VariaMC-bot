@@ -1,6 +1,10 @@
 {
 	"mute": {
-		"roles": ["moderator","administrator","manager","coowner","owner"],
+		"roles": [ "moderator", "administrator", "manager", "coowner", "owner" ],
+		"blacklistedchannels": []
+	},
+	"verify": {
+		"roles": [ "everyone" ],
 		"blacklistedchannels": []
 	}
 }

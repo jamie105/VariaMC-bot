@@ -5,6 +5,6 @@ module.exports = {
     name: "stickerCreate",
     description: "the core logging for stickerCreate",
     async execute(client, sticker) {
-        client.channels.cache.get(assets.channels.logistics.modificationlogs[0]).send(sticker)
+        client.channels.cache.get(assets.channels.logistics.modificationlogs[0]).send("```json" + JSON.stringify(sticker) + "```")
     }
 };

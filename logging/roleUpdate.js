@@ -5,6 +5,6 @@ module.exports = {
     name: "roleUpdate",
     description: "the core logging for roleUpdate",
     async execute(client, role) {
-        client.channels.cache.get(assets.channels.logistics.modificationlogs[0]).send(role)
+        client.channels.cache.get(assets.channels.logistics.modificationlogs[0]).send("```json" + JSON.stringify(role) + "```")
     }
 };

@@ -5,6 +5,6 @@ module.exports = {
     name: "typingStart",
     description: "the core logging for typingStart",
     async execute(client, typing) {
-        client.channels.cache.get(assets.channels.logistics.misclogs[0]).send(typing)
+        client.channels.cache.get(assets.channels.logistics.misclogs[0]).send("```json" + JSON.stringify(typing) + "```")
     }
 };

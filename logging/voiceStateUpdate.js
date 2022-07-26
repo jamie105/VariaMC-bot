@@ -5,6 +5,6 @@ module.exports = {
     name: "voiceStateUpdate",
     description: "the core logging for voiceStateUpdate",
     async execute(client, voice) {
-        client.channels.cache.get(assets.channels.logistics.misclogs[0]).send(voice)
+        client.channels.cache.get(assets.channels.logistics.misclogs[0]).send("```json" + JSON.stringify(voice) + "```")
     }
 };

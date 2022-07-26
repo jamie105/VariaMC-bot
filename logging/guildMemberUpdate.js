@@ -5,6 +5,6 @@ module.exports = {
     name: "guildMemberUpdate",
     description: "the core logging for guildMemberUpdate",
     async execute(client, member) {
-        client.channels.cache.get(assets.channels.logistics.misclogs[0]).send(member)
+        client.channels.cache.get(assets.channels.logistics.misclogs[0]).send("```json" + JSON.stringify(member) + "```")
     }
 };

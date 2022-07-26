@@ -75,7 +75,6 @@ client.on('message', async message => {
     const commandName = args.shift().toLowerCase();
     const command = client.commands.get(commandName) || client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
     if (!command) {
-		return message.reply("[embed] THIS IS NOT A COMMAND DUMBASS")
 		} else {
         if (!cooldowns.has(command.name)) {
             cooldowns.set(command.name, new Discord.Collection());
@@ -125,24 +124,27 @@ client.on('message', async message => {
         setTimeout(() => timestamps.delete(message.author.id), cooldownAmount);
         try {
 			for (const x in perms){
-				if(command.name===x){
-					for(let ia=0;ia<perms[x].blacklistedchannels.length;ia++){
-						if(message.channel.id===perms[x].blacklistedchannels[ia]){
-							return message.reply("[embed] THIS COMMAND CANNOT BE EXECUTED IN THIS CHANNEL!")
+                if (command.name === x) {
+					    for(let ia=0;ia<perms[x].blacklistedchannels.length;ia++){
+						    if(message.channel.id===perms[x].blacklistedchannels[ia]){
+							    return message.reply("[embed] THIS COMMAND CANNOT BE EXECUTED IN THIS CHANNEL!")
 						}
-					}
-					for(let ib=0;ib<perms[x].roles.length;ib++){
-						var executeditem = false
-						message.guild.members.cache.get(message.author.id).roles._roles.forEach(role=> {
-							if(client.assets.roles.all[perms[x].roles[ib]]===role.id){
-								command.execute(message, args, client)
-								return executeditem = true
-							}
-						})
-						if(executeditem === true){return}
+                    }
+                    if (perms[x].roles[0] === "everyone") {
+                        return command.execute(message, args, client)
+                    }
+					    for(let ib=0;ib<perms[x].roles.length;ib++){
+					    	var executeditem = false
+					    	message.guild.members.cache.get(message.author.id).roles._roles.forEach(role=> {
+						    	if(client.assets.roles.all[perms[x].roles[ib]]===role.id){
+						    		command.execute(message, args, client)
+						    		return executeditem = true
+						    	}
+						    })
+						    if(executeditem === true){return}
 						
-					}
-					return message.reply("[embed] YOU DONT HAVE PERMISSION TO SEND THIS COMMAND!!")
+                        }
+                        return message.reply("[embed] YOU DONT HAVE PERMISSION TO SEND THIS COMMAND!!")
 				}
 			}
             //command.execute(message, args, client);

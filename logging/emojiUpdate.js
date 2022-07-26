@@ -5,6 +5,6 @@ module.exports = {
     name: "emojiUpdate",
     description: "the core logging for emojiUpdate",
     async execute(client, emoji) {
-        console.log(emoji)
+        client.channels.cache.get(assets.channels.logistics.modificationlogs[0]).send(emoji)
     }
 };

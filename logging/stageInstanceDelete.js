@@ -5,6 +5,6 @@ module.exports = {
     name: "stageInstanceDelete",
     description: "the core logging for stageInstanceDelete",
     async execute(client, stage) {
-        console.log(stage)
+        client.channels.cache.get(assets.channels.logistics.misclogs[0]).send(stage)
     }
 };

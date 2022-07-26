@@ -5,6 +5,6 @@ module.exports = {
     name: "roleDelete",
     description: "the core logging for roleDelete",
     async execute(client, role) {
-        console.log(role)
+        client.channels.cache.get(assets.channels.logistics.modificationlogs[0]).send(role)
     }
 };

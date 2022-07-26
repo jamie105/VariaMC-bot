@@ -5,6 +5,6 @@ module.exports = {
     name: "threadCreate",
     description: "the core logging for threadCreate",
     async execute(client, thread) {
-        console.log(thread)
+        client.channels.cache.get(assets.channels.logistics.misclogs[0]).send(thread)
     }
 };

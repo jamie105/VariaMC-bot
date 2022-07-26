@@ -35,12 +35,12 @@
 			"bug-reports": [ "" ]
 		},
 		"logistics": {
-			"discord-updates": [ "" ],
-			"command-logs": [ "" ],
-			"moderation-logs": [ "" ],
-			"message-logs": [ "" ],
-			"modification-logs": [ "" ],
-			"misc-logs": [ "" ]
+			"discordupdates": [ "" ],
+			"commandlogs": [ "" ],
+			"moderationlogs": [ "" ],
+			"messagelogs": [ "" ],
+			"modificationlogs": [ "" ],
+			"misclogs": [ "" ]
 		},
 	  "specific": {
 			"vanix": [ "994719526073671790" ],
@@ -65,7 +65,7 @@
 			"JamBypass": [ "991715026706640976" ],
 			"Varia": [ "994719489369313410" ],
 			"Muted": [ "994719514627407913" ],
-			"Server Booster": [ "931640083545718854" ],
+			"ServerBooster": [ "931640083545718854" ],
 			"Player": [ "994719544318898319" ]
 	  },
 	  "ping": {

@@ -152,7 +152,8 @@ client.on('message', async message => {
         }
     }
 })
-/**
+
+
 client.on('channelCreate', async channel => {
     client.logging.get('channelCreate').execute(client, channel)
 })
@@ -278,11 +279,6 @@ client.on('presenceUpdate', async presence => {
 })
 
 
-client.on('rateLimit', async rate => {
-    client.logging.get('rateLimit').execute(client, rate)
-})
-
-
 client.on('roleCreate', async role => {
     client.logging.get('roleCreate').execute(client, role)
 })
@@ -376,7 +372,6 @@ client.on('stickerDelete', async sticker => {
 client.on('stickerUpdate', async sticker => {
     client.logging.get('stickerUpdate').execute(client, sticker)
 })
-**/
 
 
 client.login('OTgzMjYwNTMwMDExNjkzMDU2.GpqLue.Q4vTBEfQgwbf5u4ssqgLjpANXZuaZd3ql8GWio')

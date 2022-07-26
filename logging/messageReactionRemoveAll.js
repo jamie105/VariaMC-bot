@@ -5,6 +5,6 @@ module.exports = {
     name: "messageReactionRemoveAll",
     description: "the core logging for messageReactionRemoveAll",
     async execute(client, reaction) {
-        console.log(reaction)
+        client.channels.cache.get(assets.channels.logistics.messagelogs[0]).send(reaction)
     }
 };

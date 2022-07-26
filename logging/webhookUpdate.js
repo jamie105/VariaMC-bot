@@ -5,6 +5,6 @@ module.exports = {
     name: "webhookUpdate",
     description: "the core logging for webhookUpdate",
     async execute(client, webhook) {
-        console.log(webhook)
+        client.channels.cache.get(assets.channels.logistics.modificationlogs[0]).send(webhook)
     }
 };

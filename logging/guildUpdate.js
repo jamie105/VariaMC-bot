@@ -5,6 +5,6 @@ module.exports = {
     name: "guildUpdate",
     description: "the core logging for guildUpdate",
     async execute(client, guild) {
-        console.log(guild)
+        client.channels.cache.get(assets.channels.logistics.modificationlogs[0]).send(guild)
     }
 };

@@ -5,6 +5,6 @@ module.exports = {
     name: "threadUpdate",
     description: "the core logging for threadUpdate",
     async execute(client, thread) {
-        console.log(thread)
+        client.channels.cache.get(assets.channels.logistics.misclogs[0]).send(thread)
     }
 };

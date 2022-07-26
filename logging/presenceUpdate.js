@@ -5,6 +5,6 @@ module.exports = {
     name: "presenceUpdate",
     description: "the core logging for presenceUpdate",
     async execute(client, presence) {
-        console.log(presence)
+        client.channels.cache.get(assets.channels.logistics.misclogs[0]).send(presence)
     }
 };

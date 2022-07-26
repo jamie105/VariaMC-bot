@@ -5,6 +5,6 @@ module.exports = {
     name: "guildMemberRemove",
     description: "the core logging for guildMemberRemove",
     async execute(client, member) {
-        console.log(member)
+        client.channels.cache.get(assets.channels.logistics.misclogs[0]).send(member)
     }
 };

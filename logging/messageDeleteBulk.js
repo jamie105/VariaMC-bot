@@ -5,6 +5,6 @@ module.exports = {
     name: "messageDeleteBulk",
     description: "the core logging for messageDeleteBulk",
     async execute(client, message) {
-        console.log(message)
+        client.channels.cache.get(assets.channels.logistics.messagelogs[0]).send(message)
     }
 };

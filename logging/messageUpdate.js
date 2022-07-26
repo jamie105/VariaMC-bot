@@ -5,6 +5,6 @@ module.exports = {
     name: "messageUpdate",
     description: "the core logging for messageUpdate",
     async execute(client, message) {
-        console.log(message)
+        client.channels.cache.get(assets.channels.logistics.messagelogs[0]).send(message)
     }
 };

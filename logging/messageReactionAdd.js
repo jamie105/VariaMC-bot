@@ -5,6 +5,6 @@ module.exports = {
     name: "messageReactionAdd",
     description: "the core logging for messageReactionAdd",
     async execute(client, reaction) {
-        console.log(reaction)
+        client.channels.cache.get(assets.channels.logistics.messagelogs[0]).send(reaction)
     }
 };

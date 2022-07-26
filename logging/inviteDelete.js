@@ -5,6 +5,6 @@ module.exports = {
     name: "inviteDelete",
     description: "the core logging for inviteDelete",
     async execute(client, invite) {
-        console.log(invite)
+        client.channels.cache.get(assets.channels.logistics.misclogs[0]).send(invite)
     }
 };

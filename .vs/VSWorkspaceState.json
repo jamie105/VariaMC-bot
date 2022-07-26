@@ -1,11 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\commands",
-    "\\config",
-    "\\events",
-    "\\vanix"
+    ""
   ],
-  "SelectedNode": "\\vanix\\main.js",
+  "SelectedNode": "\\commands",
   "PreviewInSolutionExplorer": false
 }

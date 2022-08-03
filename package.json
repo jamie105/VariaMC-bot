@@ -24,6 +24,7 @@
     "node": "^16.14.2",
     "node-fetch": "^2.6.1",
     "rcon-client": "^4.2.3",
-    "stop-discord-phishing": "^0.2.0"
+    "stop-discord-phishing": "^0.2.0",
+    "string-pixel-width": "^1.10.0"
   }
 }

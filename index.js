@@ -155,7 +155,7 @@ client.on('message', async message => {
     }
 })
 
-
+/**
 client.on('channelCreate', async channel => {
     client.logging.get('channelCreate').execute(client, channel)
 })
@@ -205,11 +205,12 @@ client.on('guildIntegrationsUpdate', async guild => {
     client.logging.get('guildIntegrationsUpdate').execute(client, guild)
 })
 
-
+**/
 client.on('guildMemberAdd', async member => {
-    client.logging.get('guildMemberAdd').execute(client, member)
+    //client.logging.get('guildMemberAdd').execute(client, member)
+    client.events.get('memberJoin').execute(client, member);
 })
-
+/**
 
 client.on('guildMemberRemove', async member => {
     client.logging.get('guildMemberRemove').execute(client, member)
@@ -374,6 +375,6 @@ client.on('stickerDelete', async sticker => {
 client.on('stickerUpdate', async sticker => {
     client.logging.get('stickerUpdate').execute(client, sticker)
 })
-
+**/
 
 client.login('OTgzMjYwNTMwMDExNjkzMDU2.GpqLue.Q4vTBEfQgwbf5u4ssqgLjpANXZuaZd3ql8GWio')

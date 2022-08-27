@@ -21,7 +21,7 @@
     "fs": "^0.0.1-security",
     "level": "^8.0.0",
     "ms": "^2.1.3",
-    "node": "^16.14.2",
+    "node": "16.x",
     "node-fetch": "^2.6.1",
     "rcon-client": "^4.2.3",
     "stop-discord-phishing": "^0.2.0",

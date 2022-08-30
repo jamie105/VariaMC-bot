@@ -6,6 +6,10 @@
 	"verify": {
 		"roles": [ "everyone" ],
 		"blacklistedchannels": []
+	},
+	"link": {
+		"roles": [ "everyone" ],
+		"blacklistedchannels": []
 	}
 }
 

@@ -34,7 +34,7 @@ module.exports = {
                         if (messages.first().content === code) {
                             message.member.roles.add(message.guild.roles.cache.find(role => role.id === assets.roles.special.Linked[0]));
                             message.channel.send("User Linked")
-                            message.member.setNickname("[" + args[0] + "]");
+                            client.channels.cache.get('1014165349815549982').send(message.author.id + ":" + args[0])
                         } else {
                             message.channel.send("Incorrect Code. Please Type `!link (ign)` And Try Again!");
                         }

@@ -27,11 +27,11 @@ module.exports = {
         context.textBaseline = 'middle';
         context.font = usernamefs + 'px Times New Roman';
         context.fillStyle = '#ffffff';
-        context.fillText(member.user.username, '495', '280');
+        context.fillText(member.user.username, '495', '300');
         context.font = '40px Times New Roman';
         context.fillText('#' + member.user.discriminator, '800', '348');
         context.font = '115px Times New Roman';
-        context.fillText('WELCOME', '557', '118');
+        context.fillText('WELCOME', '557', '138');
         const attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'welcome-image.png');
         client.channels.cache.get('994719500547133511').send("<@" + member.user.id + "> Welcome to VariaMC! Please enjoy your stay and let it be known that we now have "+ member.guild.memberCount +" members!", attachment)
 

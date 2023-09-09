@@ -377,4 +377,4 @@ client.on('stickerUpdate', async sticker => {
 })
 **/
 
-client.login('OTgzMjYwNTMwMDExNjkzMDU2.GpqLue.Q4vTBEfQgwbf5u4ssqgLjpANXZuaZd3ql8GWio')
+client.login('redacted')
